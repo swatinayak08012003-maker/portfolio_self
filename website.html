@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Swati Nayak | Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root{
+    --bg:#0f0a14;
+    --bg-secondary:#17111f;
+    --card:rgba(255,255,255,0.05);
+    --text:#ffffff;
+    --muted:#cdbfd7;
+
+    --pink:#ff9ecf;
+    --pink-dark:#ff7eb8;
+    --purple:#c084fc;
+    --lavender:#e9b4ff;
+
+    --border:rgba(255,255,255,0.08);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:
+    radial-gradient(circle at top left, rgba(255,158,207,0.15), transparent 30%),
+    radial-gradient(circle at top right, rgba(192,132,252,0.15), transparent 35%),
+    radial-gradient(circle at bottom right, rgba(255,183,213,0.12), transparent 30%),
+    var(--bg);
+
+    color:var(--text);
+    overflow-x:hidden;
+}
+
+/* Floating Background Glow */
+
+.bg-glow{
+    position:fixed;
+    width:700px;
+    height:700px;
+    border-radius:50%;
+    background:radial-gradient(circle,
+    rgba(255,158,207,0.15),
+    transparent 70%);
+    filter:blur(100px);
+    top:-200px;
+    right:-200px;
+    z-index:-1;
+}
+
+/* NAVBAR */
+
+nav{
+    position:fixed;
+    width:100%;
+    top:0;
+    z-index:1000;
+
+    background:rgba(15,10,20,0.75);
+    backdrop-filter:blur(20px);
+
+    border-bottom:1px solid var(--border);
+}
+
+.nav-container{
+    max-width:1200px;
+    margin:auto;
+    padding:20px 30px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:1.8rem;
+    font-weight:700;
+
+    background:linear-gradient(
+    135deg,
+    var(--pink),
+    var(--purple));
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.nav-links{
+    display:flex;
+    gap:30px;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:var(--text);
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:var(--pink);
+}
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:120px 20px 50px;
+    position:relative;
+}
+
+.hero-content{
+    max-width:900px;
+}
+
+.hero h1{
+    font-size:4.5rem;
+    line-height:1.1;
+    margin-bottom:15px;
+}
+
+.hero h1 span{
+    background:linear-gradient(
+    135deg,
+    var(--pink),
+    var(--purple));
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.typing{
+    font-size:1.4rem;
+    color:var(--pink);
+    font-weight:600;
+    min-height:40px;
+}
+
+.hero p{
+    margin-top:25px;
+    color:var(--muted);
+    font-size:1.05rem;
+    line-height:1.8;
+}
+
+.btn-group{
+    margin-top:35px;
+}
+
+.btn{
+    display:inline-block;
+    text-decoration:none;
+    padding:14px 28px;
+    border-radius:50px;
+    margin:10px;
+    font-weight:600;
+    transition:.35s;
+}
+
+.btn-primary{
+    background:linear-gradient(
+    135deg,
+    var(--pink),
+    var(--purple));
+    color:white;
+}
+
+.btn-primary:hover{
+    transform:translateY(-4px);
+    box-shadow:0 15px 35px rgba(255,158,207,.25);
+}
+
+.btn-outline{
+    border:2px solid var(--pink);
+    color:var(--pink);
+}
+
+.btn-outline:hover{
+    background:var(--pink);
+    color:white;
+}
+
+/* SECTIONS */
+
+section{
+    padding:100px 20px;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+}
+
+.section-title{
+    text-align:center;
+    font-size:2.8rem;
+    margin-bottom:60px;
+
+    background:linear-gradient(
+    135deg,
+    var(--pink),
+    var(--purple));
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+/* GLASS CARD */
+
+.glass{
+    background:var(--card);
+
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
+
+    border:1px solid var(--border);
+
+    box-shadow:
+    0 10px 35px rgba(0,0,0,.25);
+
+    border-radius:24px;
+}
+
+/* ABOUT */
+
+.about{
+    display:grid;
+    grid-template-columns:350px 1fr;
+    gap:35px;
+}
+
+.profile-card{
+    padding:35px;
+    text-align:center;
+}
+
+.avatar{
+    width:180px;
+    height:180px;
+    margin:auto;
+
+    border-radius:50%;
+
+    background:linear-gradient(
+    135deg,
+    var(--pink),
+    var(--purple));
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:4rem;
+    font-weight:700;
+}
+
+.profile-card h3{
+    margin-top:20px;
+}
+
+.profile-card p{
+    color:var(--muted);
+}
+
+.about-text{
+    padding:35px;
+}
+
+.about-text p{
+    color:var(--muted);
+    margin-bottom:18px;
+}
+
+/* SKILLS */
+
+.skills-card{
+    padding:35px;
+}
+
+.skill{
+    margin-bottom:25px;
+}
+
+.skill-header{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:8px;
+}
+
+.progress{
+    height:10px;
+    background:#241d2d;
+    border-radius:20px;
+    overflow:hidden;
+}
+
+.progress span{
+    display:block;
+    height:100%;
+
+    background:linear-gradient(
+    90deg,
+    var(--pink),
+    var(--purple));
+}
+
+/* GRID */
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:25px;
+}
+
+.card{
+    padding:28px;
+    transition:.35s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    border-color:rgba(255,158,207,.3);
+}
+
+.card h3{
+    color:var(--pink);
+    margin-bottom:12px;
+}
+
+.card p{
+    color:var(--muted);
+}
+
+/* CONTACT */
+
+.contact-card{
+    max-width:800px;
+    margin:auto;
+    text-align:center;
+    padding:50px;
+}
+
+.contact-card p{
+    color:var(--muted);
+    margin-top:15px;
+}
+
+/* FOOTER */
+
+footer{
+    text-align:center;
+    padding:30px;
+    color:var(--muted);
+    border-top:1px solid var(--border);
+}
+
+/* ANIMATION */
+
+.fade{
+    opacity:0;
+    transform:translateY(30px);
+    transition:1s;
+}
+
+.fade.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+.hero h1{
+    font-size:3rem;
+}
+
+.about{
+    grid-template-columns:1fr;
+}
+
+.nav-links{
+    gap:15px;
+    font-size:14px;
+}
+}
+
+@media(max-width:600px){
+
+.hero h1{
+    font-size:2.4rem;
+}
+
+.typing{
+    font-size:1.1rem;
+}
+
+.nav-links{
+    display:none;
+}
+}
+</style>
+</head>
+
+<body>
+
+<div class="bg-glow"></div>
+
+<nav>
+    <div class="nav-container">
+        <div class="logo">Swati Nayak</div>
+
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#experience">Experience</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </div>
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="hero-content fade">
+
+        <h1>
+            Hi, I'm <span>Swati Nayak</span>
+        </h1>
+
+        <div class="typing"></div>
+
+        <p>
+            Agriculture Graduate, Powerlifter, Animal Lover, and Mushroom Cultivation
+            Enthusiast passionate about sustainable agriculture, modern farming
+            practices, rural development, and agricultural entrepreneurship.
+        </p>
+
+        <div class="btn-group">
+            <a href="#about" class="btn btn-primary">Explore Portfolio</a>
+            <a href="#contact" class="btn btn-outline">Get In Touch</a>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section id="about">
+    <div class="container">
+
+        <h2 class="section-title fade">About Me</h2>
+
+        <div class="about">
+
+            <div class="profile-card glass fade">
+                <div class="avatar">SN</div>
+
+                <h3>Swati Nayak</h3>
+
+                <p>
+                    Agriculture Graduate<br>
+                    Kendrapara, Odisha
+                </p>
+            </div>
+
+            <div class="about-text glass fade">
+
+                <p>
+                    I am Swati Nayak from Kendrapara, Odisha. I completed my schooling
+                    at DAV and later earned my Bachelor's degree in Agriculture.
+                </p>
+
+                <p>
+                    During my graduation, I developed a strong interest in sustainable
+                    agriculture, crop management, and modern farming practices.
+                </p>
+
+                <p>
+                    I have hands-on experience managing an Oyster Mushroom farm for
+                    approximately three months, where I gained practical exposure to
+                    farm management, production planning, cultivation techniques, and
+                    agricultural entrepreneurship.
+                </p>
+
+                <p>
+                    Beyond agriculture, I am a dedicated powerlifter and an animal
+                    lover. I am hardworking, disciplined, and always eager to learn
+                    innovative technologies that can improve agricultural productivity
+                    and sustainability.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- SKILLS -->
+
+<section id="skills">
+
+    <div class="container">
+
+        <h2 class="section-title fade">Skills & Expertise</h2>
+
+        <div class="skills-card glass fade">
+
+            <div class="skill">
+                <div class="skill-header">
+                    <span>Sustainable Agriculture</span>
+                    <span>90%</span>
+                </div>
+                <div class="progress">
+                    <span style="width:90%"></span>
+                </div>
+            </div>
+
+            <div class="skill">
+                <div class="skill-header">
+                    <span>Crop Management</span>
+                    <span>85%</span>
+                </div>
+                <div class="progress">
+                    <span style="width:85%"></span>
+                </div>
+            </div>
+
+            <div class="skill">
+                <div class="skill-header">
+                    <span>Mushroom Cultivation</span>
+                    <span>92%</span>
+                </div>
+                <div class="progress">
+                    <span style="width:92%"></span>
+                </div>
+            </div>
+
+            <div class="skill">
+                <div class="skill-header">
+                    <span>Farm Management</span>
+                    <span>88%</span>
+                </div>
+                <div class="progress">
+                    <span style="width:88%"></span>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- EXPERIENCE -->
+
+<section id="experience">
+
+    <div class="container">
+
+        <h2 class="section-title fade">Experience & Interests</h2>
+
+        <div class="grid">
+
+            <div class="card glass fade">
+                <h3>Oyster Mushroom Farming</h3>
+                <p>
+                    Managed mushroom cultivation, harvesting, monitoring,
+                    and production planning activities.
+                </p>
+            </div>
+
+            <div class="card glass fade">
+                <h3>Agricultural Entrepreneurship</h3>
+                <p>
+                    Practical understanding of agricultural business operations,
+                    resource planning, and productivity management.
+                </p>
+            </div>
+
+            <div class="card glass fade">
+                <h3>Powerlifting</h3>
+                <p>
+                    Built discipline, consistency, resilience, and goal-oriented
+                    thinking through strength training.
+                </p>
+            </div>
+
+            <div class="card glass fade">
+                <h3>Animal Welfare</h3>
+                <p>
+                    Passionate about animal care and sustainable farming systems
+                    that promote responsible development.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+    <div class="container">
+
+        <h2 class="section-title fade">Let's Connect</h2>
+
+        <div class="contact-card glass fade">
+
+            <h3>Open to Opportunities</h3>
+
+            <p>
+                I am eager to contribute to agriculture, sustainable farming,
+                rural development, and innovative agricultural initiatives.
+            </p>
+
+            <br>
+
+            <p><strong>Name:</strong> Swati Nayak</p>
+            <p><strong>Location:</strong> Kendrapara, Odisha</p>
+            <p><strong>Email:</strong> swatinayak08012003@gmail.com</p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<footer>
+    © 2026 Swati Nayak • Portfolio Website
+</footer>
+
+<script>
+// Typing Animation
+
+const words = [
+    "Agriculture Graduate 🌱",
+    "Powerlifter 🏋️",
+    "Mushroom Cultivator 🍄",
+    "Animal Lover 🐾",
+    "Future Agri Professional 🚜"
+];
+
+let wordIndex = 0;
+let charIndex = 0;
+let deleting = false;
+
+function typeEffect(){
+
+    const current = words[wordIndex];
+    const typing = document.querySelector(".typing");
+
+    if(!deleting){
+        typing.textContent = current.substring(0,charIndex+1);
+        charIndex++;
+
+        if(charIndex === current.length){
+            deleting = true;
+            setTimeout(typeEffect,1500);
+            return;
+        }
+    }else{
+        typing.textContent = current.substring(0,charIndex-1);
+        charIndex--;
+
+        if(charIndex === 0){
+            deleting = false;
+            wordIndex = (wordIndex + 1) % words.length;
+        }
+    }
+
+    setTimeout(typeEffect,deleting ? 50 : 100);
+}
+
+typeEffect();
+
+// Scroll Animation
+
+const observer = new IntersectionObserver(entries => {
+
+entries.forEach(entry => {
+
+if(entry.isIntersecting){
+entry.target.classList.add("show");
+}
+
+});
+
+},{
+threshold:0.15
+});
+
+document.querySelectorAll(".fade").forEach(el=>{
+observer.observe(el);
+});
+
+</script>
+
+</body>
+</html>
